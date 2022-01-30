@@ -43,6 +43,9 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(-1, 1, 1);
 
     }
+    public void inverseSpeed() {
+        speed = -speed;
+    }
     private void Jump() {
         if (Input.GetKey(KeyCode.Space) && (isGrounded || Time.time - lastTimeGrounded <= rememberGroundedFor)) {
             body.velocity = new Vector2(body.velocity.x, jumpForce);
