@@ -15,6 +15,9 @@ public class PlayerMovement : MonoBehaviour
     public Transform isGroundedChecker;
     public float checkGroundRadius;
     public LayerMask groundLayer;
+    // For checking if player is near ledge
+    public float rememberGroundedFor;
+    float lastTimeGrounded;
 
     private void Awake()
     {
@@ -41,8 +44,9 @@ public class PlayerMovement : MonoBehaviour
 
     }
     private void Jump() {
-        if (Input.GetKey(KeyCode.Space) && isGrounded)
+        if (Input.GetKey(KeyCode.Space) && (isGrounded || Time.time - lastTimeGrounded <= rememberGroundedFor)) {
             body.velocity = new Vector2(body.velocity.x, jumpForce);
+        }
     }
     // Credit to Board to Bits Games on youtube and his tutorial:
     // "Better Jumping in Unity With Four Lines of Code"
@@ -61,6 +65,9 @@ public class PlayerMovement : MonoBehaviour
             isGrounded = true;
         }
         else {
+            if (isGrounded) {
+                lastTimeGrounded = Time.time;
+            }
             isGrounded = false;
         }
     }
