@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -303,6 +304,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d6b191560d6c9b41a04f8e352677df9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1174966410}
+  offset: {x: 0, y: 0, z: -10}
+  smoothFactor: 3
 --- !u!1 &1174966406
 GameObject:
   m_ObjectHideFlags: 0
@@ -431,7 +447,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1174966406}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.587, y: 1.11, z: 0}
+  m_LocalPosition: {x: 0.62, y: 2.14, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1337912212}
@@ -450,10 +466,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e34565c1f62eba64a95c0e0fc00024f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
   jumpForce: 10
-  fallMultiplier: 5.5
-  lowJumpMultiplier: 5
+  fallMultiplier: 5
+  lowJumpMultiplier: 2
   isGroundedChecker: {fileID: 1337912212}
   checkGroundRadius: 0.05
   groundLayer:
@@ -646,7 +662,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 12, y: 1}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!212 &1634963130
 SpriteRenderer:
@@ -707,7 +723,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1634963128}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.53, y: -1.23, z: 0}
+  m_LocalPosition: {x: 0.42, y: -0.77, z: 0}
   m_LocalScale: {x: 36.149666, y: 1.5048441, z: 1.5048441}
   m_Children: []
   m_Father: {fileID: 0}
